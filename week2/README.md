@@ -26,3 +26,28 @@ VirtualAlloc, v.v.
 Các RVA/Size không vượt quá kích thước file
 Không crash nếu file không chuẩn, thiếu dữ liệu.
 Giải phóng đầy đủ bộ nhớ, handle, khi lỗi xảy ra.
+
+🧠 BÀI TẬP: VIẾT PE LOADER
+
+🎯 Mục tiêu
+Mô phỏng quá trình load một file
+PE như Windows PE Loader:
+
+Đọc file PE từ đĩa.
+
+Cấp phát vùng bộ nhớ theo
+ImageBase/SizeOfImage.
+
+Ánh xạ các section đúng địa chỉ
+RVA.
+
+Xử lý Entry Point: mô phỏng
+chuyển quyền điều khiển.
+
+Xử lý lỗi:
+kiểm tra hợp lệ định dạng PE, cấu trúc header, section size, tránh crash khi dữ
+liệu sai.
+
+Ngôn ngữ:
++ asm (học cách mô phỏng ánh xạ bộ nhớ)
++ c/c++ (loader hoàn chỉnh có thể thực thi)
